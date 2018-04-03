@@ -1,8 +1,8 @@
 <template>
-  <div class="login">
+  <div class="registor">
     <h1>在线考试系统</h1>
     <h3>用户注册</h3>
-    <div class="login-form">
+    <div class="registor-form">
       <el-form :inline="true" :model="formInline" class="demo-form-inline" label-position="left" label-width="70px"> 
         <el-form-item label="用户角色">
           <el-select v-model="formInline.region">
@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: "Login",
+  name: "Registor",
   data() {
     return {
       formInline: {
@@ -52,7 +52,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang='scss'>
-.login {
+.registor {
   padding-top: 50px;
   text-align: center;
   margin: 0 auto;
@@ -70,7 +70,7 @@ export default {
     font-size: 36px;
     margin-bottom: 20px;
   }
-  .login-form {
+  .registor-form {
     .el-form-item {
       display: block; 
       .el-select {
