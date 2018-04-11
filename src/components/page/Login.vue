@@ -6,9 +6,11 @@
       <el-form-item label="账号">
         <el-input v-model="formInline.id" placeholder="账号"></el-input>
       </el-form-item>
-      <el-form-item class="radio-box">
-        <el-radio v-model="radio" label="1">学生</el-radio>
-        <el-radio v-model="radio" label="2">教师</el-radio>
+      <el-form-item class="radio-box" >
+        <el-radio-group v-model="formInline.role">
+          <el-radio label="1">学生</el-radio>
+          <el-radio label="2">教师</el-radio>
+        </el-radio-group>
       </el-form-item>
       <el-form-item label="密码" class="pass">
         <el-input type="password" v-model="formInline.pass" placeholder="密码"></el-input>
@@ -31,14 +33,24 @@ export default {
   name: "Login",
   data() {
     return {
-      formInline: {},
-      radio: '1',
+      formInline: {
+        id: "",
+        role: "",
+        pass: ""
+      },
     };
   },
+  computed: {},
+  mounted() {},
   methods: {
     login() {
-      // todo....
-      this.$router.push('searchScore');
+      this.$store.state.formInline = this.formInline;
+      if (this.$store.state.formInline.role == 1) {
+        this.$router.push("searchScore");
+      } else {
+        this.$router.push("fabu");
+      }
+      console.log("aaa" + this.$store.state.formInline.role);
     }
   }
 };
@@ -85,7 +97,7 @@ export default {
       margin-bottom: 20px;
       .tip {
         font-size: 12px;
-        color: #409EFF;
+        color: #409eff;
         margin-right: 30px;
       }
     }

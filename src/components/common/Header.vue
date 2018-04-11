@@ -8,7 +8,7 @@
             <el-dropdown trigger="click" @command="handleCommand">
                 <span class="el-dropdown-link">
                     <img class="user-logo" src="../../../static/img/user.jpeg">
-                    {{username}}{{info}},您好！
+                    {{username}}-{{info}},您好！
                 </span>
                 <el-dropdown-menu slot="dropdown">
                     <el-dropdown-item ><router-link to="personalInfo">个人信息</router-link></el-dropdown-item>
@@ -27,6 +27,13 @@ export default {
       name: "linxin",
       info: "同学"
     };
+  },
+  mounted(){
+    if(this.$store.state.formInline.role == 1) {
+      this.info = '同学'
+    } else {
+      this.info = '老师'
+    }
   },
   computed: {
     username() {

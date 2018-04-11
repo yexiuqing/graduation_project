@@ -128,7 +128,15 @@ export default new Router({
           path: '/fabu',
           name: 'Fabu',
           component: resolve => {
-            require(['@/components/teacher/fabu'], resolve)
+            require(['@/components/teacher/Fabu'], resolve)
+          }
+        },
+        // 学生名单
+        {
+          path: '/studentForm',
+          name: 'StudentForm',
+          component: resolve => {
+            require(['@/components/teacher/studentForm'], resolve)
           }
         }
       ]
