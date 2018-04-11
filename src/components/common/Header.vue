@@ -11,8 +11,8 @@
                     {{username}}{{info}},您好！
                 </span>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item >个人信息</el-dropdown-item>
-                    <el-dropdown-item >修改密码</el-dropdown-item>
+                    <el-dropdown-item ><router-link to="personalInfo">个人信息</router-link></el-dropdown-item>
+                    <el-dropdown-item ><router-link to="modifyInfo">修改密码 </router-link></el-dropdown-item>
                     <el-dropdown-item command="loginout">退出</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
@@ -85,6 +85,9 @@ export default {
 }
 .el-dropdown-menu__item {
   text-align: center;
+  a {
+      color: #606266 ;
+    }
 }
 </style>
 

@@ -1,11 +1,6 @@
 <template>
-  <div class="online-exam">
-    <h2>{{title}}</h2>
-    <div class="tip">
-      <span class="subject">考试科目:{{subject}}</span>
-      <span class="score">总分： {{allScore}} 分</span>
-    </div>
-    <p class="leftTime">考试已经开始了{{min}}分{{sec}}秒，剩余{{minute}}分{{second}}秒</p>
+  <div class="online-practice-text">
+    <h3>练习{{id}}</h3>
     <div class="text" v-for="item in examItem">
       <p class="text-id">第{{item.num}}题</p>
       <p class="text-content">{{item.subject}}</p>
@@ -19,24 +14,48 @@
         </el-radio-group>
       </div>
     </div> 
+    <div class="text">
+      <p class="text-id">第5题</p>
+      <p class="text-content">已知某一数据库中有两个数据表，它们的主关键字与主关键字之间是一个对应多个的关系，这两个表若想建立关联，应该建立的永久联系是</p>
+      <div class="text-answer">
+        <label>输入答案：</label>        
+        <el-input
+          type="textarea"
+          :rows="4"
+          placeholder="请输入内容"
+          v-model="textarea">
+        </el-input>
+      </div>
+    </div>
+    <div class="text">
+      <p class="text-id">第5题</p>
+      <p class="text-content">已知某一数据库中有两个数据表，它们的主关键字与主关键字之间是一个对应多个的关系，这两个表若想建立关联，应该建立的永久联系是</p>
+      <div class="text-answer">
+        <label>输入答案：</label>        
+        <el-input
+          type="textarea"
+          :rows="4"
+          placeholder="请输入内容"
+          v-model="textarea">
+        </el-input>
+      </div>
+    </div>
     <div class="submit">
-      <el-button type="primary" class="submit-answer" @click="submit">交卷</el-button>
+      <el-button type="primary" class="submit-answer" @click="submit">提交答案</el-button>
+    </div>
+    <div class="cancle">
+      <el-button type="primary" class="submit-answer" @click="backList">返回练习列表>></el-button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'OnlineExam',
-  data () {
+  name: "OnlinePracticeText",
+  data() {
     return {
-      title: '第一次综合考试',
-      subject: "数据库原理",
-      allScore: "100",
-      min: "10",
-      sec: "20",
-      minute: "30",
-      second: "40",
+      textarea: "",
+      id: 1,
       examItem: [
         {
           num: 1,
@@ -75,31 +94,27 @@ export default {
           radio: ""
         }
       ]
-    }
+    };
   },
   methods: {
     submit() {
-      console.log('考试完成。。')
-      // to do.....
-      this.$router.push('finishExam')
+      this.$router.push('answer');
+      //  to do..
+    },
+    backList() {
+      this.$router.push('onlinePractice')
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.online-exam {
-  h2 {
+.online-practice-text {
+  position: relative;
+  h3 {
     text-align: center;
-    margin-bottom: 5px;
-  }
-  .tip {
-    text-align: center;
-  }
-  .leftTime {
-    text-align: center;
-    margin: 15px 0;
+    margin-bottom: 15px;
   }
   .text {
     width: 1000px;
@@ -120,15 +135,19 @@ export default {
       margin: 20px 0;
     }
   }
-  .submit {
+  .submit,
+  .cancle {
     display: block;
     width: 1020px;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
     height: 45px;
     margin-left: 130px;
     .submit-answer {
       width: 100%;
       height: 100%;
+    }
+    &:last-child {
+      margin-bottom: 100px;
     }
   }
 }

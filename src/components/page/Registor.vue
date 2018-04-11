@@ -1,6 +1,6 @@
 <template>
   <div class="registor">
-    <h1>在线考试系统</h1>
+    <h1>黑龙江大学在线考试中心</h1>
     <h3>用户注册</h3>
     <div class="registor-form">
       <el-form :inline="true" :model="formInline" class="demo-form-inline" label-position="left" label-width="70px"> 
@@ -45,7 +45,9 @@ export default {
     };
   },
   methods: {
-    onSubmit() {}
+    onSubmit() {
+      this.$router.push('login')
+    }
   }
 };
 </script>
@@ -58,7 +60,7 @@ export default {
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  background: url("../../../static/img/bg1.jpg") no-repeat;
+  background: url("../../../static/img/bg2.jpg") no-repeat;
   background-size: cover;
   h1,
   h3 {

@@ -1,17 +1,31 @@
 <template>
   <div class="sidebar" >
     <el-aside width="150px" >
-      <el-menu :default-openeds="['1', '3']" style="min-height: 100%;" background-color="#fff" text-color="#666">
-        <el-menu-item index="1">
+      <el-menu :default-openeds="['1', '3']" style="min-height: 100%;" background-color="#fff" text-color="#666" router>
+        <el-menu-item index="examLogin">
           <template slot="title"><i class="el-icon-message"></i>在线考试</template>
         </el-menu-item>
-        <el-menu-item index="2">
+        <el-menu-item index="onlinePractice">
           <template slot="title"><i class="el-icon-menu"></i>在线练习</template>
         </el-menu-item>
-        <el-menu-item index="3">
+        <el-menu-item index="searchScore">
           <template slot="title"><i class="el-icon-setting"></i>成绩查询</template>
         </el-menu-item>
-         <el-menu-item index="4">
+         <el-menu-item index="talkAbout">
+          <template slot="title"><i class="el-icon-setting"></i>留言交流</template>
+        </el-menu-item>
+      </el-menu>
+      <el-menu :default-openeds="['1', '3']" style="min-height: 100%;" background-color="#fff" text-color="#666" router>
+        <el-menu-item index="examLogin">
+          <template slot="title"><i class="el-icon-message"></i>在线考试</template>
+        </el-menu-item>
+        <el-menu-item index="onlinePractice">
+          <template slot="title"><i class="el-icon-menu"></i>在线练习</template>
+        </el-menu-item>
+        <el-menu-item index="searchScore">
+          <template slot="title"><i class="el-icon-setting"></i>成绩查询</template>
+        </el-menu-item>
+         <el-menu-item index="talkAbout">
           <template slot="title"><i class="el-icon-setting"></i>留言交流</template>
         </el-menu-item>
       </el-menu>
@@ -25,7 +39,9 @@ export default {
     return {};
   },
   computed: {},
-  methods: {}
+  methods: {
+    
+  }
 };
 </script>
 <style scoped lang="scss">

@@ -21,6 +21,6 @@ body{
   margin: 0;
 }
 #app {
-  
+  color: #666;
 }
 </style>
