@@ -131,6 +131,14 @@ export default new Router({
             require(['@/components/teacher/Fabu'], resolve)
           }
         },
+        // 题型设置
+        {
+          path: '/txSet',
+          name: 'TixingSet',
+          component: resolve => {
+            require(['@/components/teacher/TixingSet'], resolve)
+          }
+        },
         // 学生名单
         {
           path: '/studentForm',
@@ -138,7 +146,23 @@ export default new Router({
           component: resolve => {
             require(['@/components/teacher/studentForm'], resolve)
           }
-        }
+        },
+        // 组卷
+        {
+          path: '/zujuan',
+          name: 'ZuJuan',
+          component: resolve => {
+            require(['@/components/teacher/ZuJuan'], resolve)
+          }
+        },
+        // 组卷结果
+        {
+          path: '/zujuanResult',
+          name: 'ZuJuanResult',
+          component: resolve => {
+            require(['@/components/teacher/ZuJuanResult'], resolve)
+          }
+        },
       ]
     },
     {

@@ -6,20 +6,38 @@ Vue.use(Vuex)
 
 const state = {
   formInline: {
-    id: "2222",
-    role: "2222",
-    pass: "22222"
+    id: "",
+    role: "",
+    pass: ""
+  },
+  kaoshihao: '',
+  txForm: {
+    xzNum: "",
+    xzScore: "",
+    pdNum: "",
+    pdScore: "",
+    tkNum: "",
+    tkScore: "",
+    zhNum: "",
+    zhScore: "",
+    type: ""
   }
 }
 
 const mutations = {
   login(state, formInline) {
     state.formInline = formInline;
+  },
+  ksNum(state, kaoshihao) {
+    state.kaoshihao = kaoshihao;
+  },
+  zjForm(state,txForm) {
+    state.txForm = this.txForm;
   }
 }
 
 const actions = {
-  checkFormInline(){}
+  checkFormInline() {}
 }
 
 export default new Vuex.Store({

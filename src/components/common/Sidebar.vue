@@ -19,7 +19,7 @@
       </template>
       <template v-else>
         <el-menu :default-openeds="['1', '3']" style="min-height: 100%;" background-color="#fff" text-color="#666" router>
-          <el-menu-item index="examLogin">
+          <el-menu-item index="fabu">
             <template slot="title"><i class="el-icon-message"></i>发布考试</template>
           </el-menu-item>
           <el-menu-item index="studentForm">
