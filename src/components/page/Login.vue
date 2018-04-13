@@ -10,6 +10,7 @@
         <el-radio-group v-model="formInline.role">
           <el-radio label="1">学生</el-radio>
           <el-radio label="2">教师</el-radio>
+          <el-radio label="3">管理员</el-radio>          
         </el-radio-group>
       </el-form-item>
       <el-form-item label="密码" class="pass">
@@ -47,8 +48,10 @@ export default {
       this.$store.state.formInline = this.formInline;
       if (this.$store.state.formInline.role == 1) {
         this.$router.push("searchScore");
-      } else {
+      } else if (this.$store.state.formInline.role == 2){
         this.$router.push("fabu");
+      } else {
+        this.$router.push("mHome");
       }
       console.log("aaa" + this.$store.state.formInline.role);
     }
@@ -108,6 +111,7 @@ export default {
       }
     }
     .radio-box {
+      width: 260px;
       .el-radio {
         margin-right: 10px;
       }

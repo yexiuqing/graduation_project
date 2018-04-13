@@ -25,6 +25,9 @@
         <el-form-item>
           <el-button type="primary" @click="onSubmit">提交</el-button>
         </el-form-item>
+        <el-form-itm>
+          {{tips}}
+        </el-form-itm>
       </el-form>
     </div>
   </div>
@@ -41,12 +44,28 @@ export default {
         name: "",
         pass: "",
         repass: ""
-      }
+      },
+      tips: ""
     };
   },
   methods: {
     onSubmit() {
-      this.$router.push('login')
+      var time = 6;
+      var stop = setInterval(() => {
+        time--;
+        if (time >= 0) {
+          this.tips =
+            "已经往您的hlju.edu.cn邮箱中发了一封确认邮件，请及时确认 " +
+            time +
+            "s.....";
+        } else {
+          this.tips = "确认成功......";
+          var timeStop = setTimeout(() => {
+            this.$router.push("login");
+          }, 2000);
+          clearInterval(stop);
+        }
+      }, 1000);
     }
   }
 };
@@ -74,7 +93,7 @@ export default {
   }
   .registor-form {
     .el-form-item {
-      display: block; 
+      display: block;
       .el-select {
         width: 100px;
       }

@@ -179,6 +179,22 @@ export default new Router({
             require(['@/components/teacher/Panfen'], resolve)
           }
         },
+        // 重难点分析
+        {
+          path: '/analyse',
+          name: 'Analyse',
+          component: resolve => {
+            require(['@/components/teacher/Analyse'], resolve)
+          }
+        },
+        // 管理首页
+        {
+          path: '/mHome',
+          name: 'Mhome',
+          component: resolve => {
+            require(['@/components/management/Mhome'], resolve)
+          }
+        },
       ]
     },
     {
