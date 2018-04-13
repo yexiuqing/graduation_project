@@ -1,26 +1,23 @@
 <template>
   <div id="app">
-     <router-view/>
+    <img src="./assets/logo.png">
+    <router-view/>
   </div>
 </template>
 
 <script>
-// import Header from "./components/common/Header.vue"
-// import Sidebar from "./components/common/Sidebar.vue"
 export default {
-  name: "App",
-  // components: {
-  //   'v-header': Header,
-  //   'v-sidebar': Sidebar
-  // }
-};
+  name: 'App'
+}
 </script>
 
-<style scoped lang="scss">
-body{
-  margin: 0;
-}
+<style>
 #app {
-  color: #666;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
 }
 </style>
