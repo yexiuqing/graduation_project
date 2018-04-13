@@ -17,10 +17,10 @@
 
 <script>
 export default {
-  name: 'OnlineExamDetail',
-  data () {
+  name: "OnlineExamDetail",
+  data() {
     return {
-      sId:'234487473734711',
+      sId: "234487473734711",
       ksId: 1,
       analysis: [
         {
@@ -56,15 +56,19 @@ export default {
           learningEmphasis: "数据库表的查找"
         }
       ]
-    }
+    };
   },
   methods: {
     backList() {
-      // to do 
-      this.$router.push('searchScore')
+      // to do
+      if (this.$store.state.formInline.role == 1) {
+        this.$router.push("searchScore");
+      } else {
+        this.$router.push("tsearchScore");
+      }
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -107,7 +111,7 @@ export default {
   .back {
     display: block;
     width: 1020px;
-    margin:15px 0 100px 130px;
+    margin: 15px 0 100px 130px;
     height: 45px;
     .back-list {
       width: 100%;

@@ -1,7 +1,7 @@
 <template>
   <div class="tixing-set">
    <el-form ref="form" :model="txForm" :rules="rules" label-width="100px">
-      <el-form-item label="此次考试号">{{$store.state.kaoshihao}}</el-form-item>
+      <el-form-item label="此次考试号">{{$store.state.form.kaoshihao}}</el-form-item>
       <el-form-item label="选择题数量" >
         <el-col :span='8'>
           <el-form-item>

@@ -10,7 +10,13 @@ const state = {
     role: "",
     pass: ""
   },
-  kaoshihao: '',
+  form: {
+    name: "",
+    subject: "",
+    time: "",
+    type: "",
+    kaoshihao: ""
+  },
   txForm: {
     xzNum: "",
     xzScore: "",
@@ -21,19 +27,24 @@ const state = {
     zhNum: "",
     zhScore: "",
     type: ""
-  }
+  },
+  multipleSelection:[]
 }
 
 const mutations = {
   login(state, formInline) {
     state.formInline = formInline;
   },
-  ksNum(state, kaoshihao) {
-    state.kaoshihao = kaoshihao;
+  fabuForm(state, form) {
+    state.form = form;
   },
   zjForm(state,txForm) {
-    state.txForm = this.txForm;
+    state.txForm = txForm;
+  },
+  stData(state, multipleSelection) {
+    state.multipleSelection = multipleSelection
   }
+
 }
 
 const actions = {

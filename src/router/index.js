@@ -163,6 +163,22 @@ export default new Router({
             require(['@/components/teacher/ZuJuanResult'], resolve)
           }
         },
+        // 教师查询成绩
+        {
+          path: '/tsearchScore',
+          name: 'TeSearchScore',
+          component: resolve => {
+            require(['@/components/teacher/TeSearchScore'], resolve)
+          }
+        },
+        // 综合题判分
+        {
+          path: '/panfen',
+          name: 'Panfen',
+          component: resolve => {
+            require(['@/components/teacher/Panfen'], resolve)
+          }
+        },
       ]
     },
     {

@@ -63,7 +63,7 @@
         align='center'>
       </el-table-column>
       <el-table-column
-        prop="oper"
+        propoper=""
         label="操作"
         align='center'
         >

@@ -6,10 +6,10 @@
       </el-form-item>
       <el-form-item label="考试课程">
         <el-select v-model="form.subject" placeholder="请选择考试科目" @focus="reSetTips">
-          <el-option label="软件工程" value="rg"></el-option>
-          <el-option label="计算机组成原理" value="zcyl"></el-option>
-          <el-option label="数据库原理" value="sjk"></el-option>
-          <el-option label="数据结构与算法" value="jgysf"></el-option>          
+          <el-option label="软件工程" value="软件工程"></el-option>
+          <el-option label="计算机组成原理" value="计算机组成原理"></el-option>
+          <el-option label="数据库原理" value="数据库原理"></el-option>
+          <el-option label="数据结构与算法" value="数据结构与算法"></el-option>          
         </el-select>
       </el-form-item>
       <el-form-item label="考试时间" @focus="reSetTips">
@@ -52,7 +52,7 @@ export default {
       },
       tips: "",
       zuJuanFlag: false,
-      times: '',
+      times: ""
     };
   },
   methods: {
@@ -72,27 +72,18 @@ export default {
             (date.getMonth() + 1) +
             date.getDate() +
             (Math.round(Math.random() * 999999) + 100000);
-            this.$store.state.kaoshihao = this.form.kaoshihao;
-            // var time = 4;
-            // var stop = setInterval(()=> {
-            //   time --;
-            //   if(time > 0) {
-            //     this.times = time + "s后设置题型";
-            //   } else {
-                this.$router.push('txSet');
-            //     clearInterval(stop)
-            //   }
-              
-            // },1000)
-            
+          this.$store.state.form = this.form;
+          // this.$store.state.form.time[0] = this.timeFormat(this.form.time[0]);
+          // this.$store.state.form.time[1] = this.timeFormat(this.form.time[1]);
+          this.$router.push("txSet");
         } else {
           this.tips = "不要重复创建！";
         }
-      } else{
-        this.tips = '请输入正确信息！'
+      } else {
+        this.tips = "请输入正确信息！";
       }
     },
-    reSetTips () {
+    reSetTips() {
       this.tips = "";
     },
     reSetForm() {
@@ -101,13 +92,16 @@ export default {
       }
       this.tips = "";
     },
-    // zuJuan() {
-    //   if(this.zuJuanFlag) {
-
-    //   } else {
-    //     this.tips = '别闹，还没发布考试呢！'
-    //   }
-    // }
+    // 时间格式的处理
+    timeFormat(time) {
+      var temp = time.split('.')[0]
+      var t = temp.split('T')
+      var result;
+      for(var i = 0; i < t.length; i++) {
+        result += t[i]+" "
+      }
+      return result;
+    }
   }
 };
 </script>

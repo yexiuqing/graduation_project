@@ -25,13 +25,13 @@
           <el-menu-item index="studentForm">
             <template slot="title"><i class="el-icon-menu"></i>学生名单</template>
           </el-menu-item>
-          <el-menu-item index="searchScore">
+          <el-menu-item index="panfen">
             <template slot="title"><i class="el-icon-setting"></i>主观题判分</template>
           </el-menu-item>
           <el-menu-item index="talkAbout">
             <template slot="title"><i class="el-icon-setting"></i>重难点分析</template>
           </el-menu-item>
-          <el-menu-item index="talkAbout">
+          <el-menu-item index="tsearchScore">
             <template slot="title"><i class="el-icon-setting"></i>成绩查询</template>
           </el-menu-item>
           <el-menu-item index="talkAbout">
